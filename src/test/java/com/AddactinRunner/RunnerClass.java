@@ -8,8 +8,6 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import com.github.dockerjava.api.model.Driver;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -17,13 +15,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @RunWith(Cucumber.class)
 @CucumberOptions(features= "src//test//java//com//AddactinFeature",
 glue="com.AddactinStepdefinition",
-monochrome = true,
-dryRun = false,
-strict = true,
-plugin = {"html:Reports/Html_Report",
+monochrome=true,
+dryRun=false,
+strict=true,
+//tags="@smokeTest",
+plugin={"html:Reports/Html_Report",
 		"pretty",
 		"json:Reports/Json_Report.json",
-		"com.cucumber.listener.ExtentCucumberFormatter:Reports/Extent_Report.html"})
+		"com.cucumber.listener.ExtentCucumberFormatter:Reports/Extent_Report.html"
+})
+
 
 
 
